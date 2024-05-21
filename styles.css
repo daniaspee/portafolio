@@ -1,39 +1,59 @@
-/* Estilos para la barra de navegación */
-.navbar {
-    display: flex; /* Usa un modelo de caja flexible para alinear los elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    background-color: #333; /* Color de fondo de la barra de navegación */
-    padding: 10px; /* Espacio de relleno dentro de la barra de navegación */
+/* Estilos generales */
+body {
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Estilos para el título de la barra de navegación */
-.navbar-title h1 {
-    margin: 0; /* Elimina el margen predeterminado del título */
-    color: #fff; /* Color del texto del título */
+.navbar {
+    background: #FFF;
+    padding: 22px 68px;
 }
 
 .navbar ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    margin: 0; /* Elimina el margen exterior */
-    padding: 0; /* Elimina el relleno de la lista */
-    display: flex; /* Usa un modelo de caja flexible para los elementos de lista */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.navbar ul li {
-    margin-left: 20px; /* Espacio entre los elementos de lista */
+.navbar li {
+    margin-right: 20px;
 }
 
-.navbar ul li a {
-    color: #fff; /* Color del texto de los enlaces */
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
 }
 
-/* Estilos para los estados de los enlaces */
-.navbar ul li a:hover {
-    text-decoration: underline; /* Subraya el enlace al pasar el ratón sobre él */
+.navbar a:hover {
+    color: #555;
 }
 
-.navbar ul li a.active {
-    font-weight: bold; /* Resalta el enlace activo */
+/* Estilos específicos para el enlace "HOME" */
+.home-link {
+    display: inline-block;
+    padding: 0px 100%;
+    background-color: var(--Monocromaticos-Black, #000);
+    color: #FFF; /* Cambia el color del texto para que sea legible sobre el fondo negro */
+    border-radius: 0; /* Elimina el redondeo de las esquinas */
+    text-align: center; /* Centra el texto dentro del cuadro */
+}
+
+/* Estilos para hacer la barra de navegación responsiva */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
 }
