@@ -1,8 +1,4 @@
 
-body {
-    background: var(--Monocromaticos-White, #FFFFFF);
-
-} 
 .titulo-central{
     display: flex;
     width: 1464px;
@@ -34,4 +30,66 @@ h1 {
     width: 1024px;
     height: 768px;
     flex-shrink: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: var(--Monocromaticos-White, #FFFFFF); */
+
+}
+
+.navbar {
+    background: #FFF;
+    padding: 22px 68px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #555;
+}
+
+/* Estilos específicos para el enlace "HOME" */
+.home-link {
+    display: inline-block;
+    padding: 0px 100%;
+    background-color: var(--Monocromaticos-Black, #000);
+    color: #FFF; /* Cambia el color del texto para que sea legible sobre el fondo negro */
+    border-radius: 0; /* Elimina el redondeo de las esquinas */
+    text-align: center; /* Centra el texto dentro del cuadro */
+}
+
+/* Estilos para hacer la barra de navegación responsiva */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
 }
