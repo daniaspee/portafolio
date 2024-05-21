@@ -8,16 +8,14 @@ body {
 
 }
 
-.titulo-central{
-    display: flex;
-    width: 1464px;
+.titulo-central {
+    width: 100%; /* Cambiado a 100% para que ocupe todo el ancho */
     height: 105px;
-    padding: 0px 16px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-
+    padding: 0 16px;
+    text-align: center; /* Alineación del texto centrada */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
 }
+
 h1 {
     color: var(--Monocromaticos-Black, #000);
     font-family: Mukta;
@@ -27,21 +25,21 @@ h1 {
     line-height: normal;
 }
 
-.imagen-inicial{
-    width: 1464px;
-    height: 1024px;
-    background: #FFF;
+
+
+.imagen-inicial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-#img-central{
-    border-radius: 16.2px;
-    background: #D9D9D9;
-    width: 1024px;
-    height: 768px;
-    flex-shrink: 0;
+.image {
+    max-width: 40%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
-
-
 
 /* navbar */
 
@@ -94,5 +92,91 @@ h1 {
 
     .navbar li {
         margin-bottom: 10px;
+    }
+}
+
+
+
+/*abaut*/
+.about-container {
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    max-width: 800px; /* Cambia este valor según el ancho máximo deseado */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-text {
+    width: 50%;
+}
+
+.image {
+    max-width: 50%;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text, .image {
+        max-width: 100%;
+        width: auto;
+    }
+}
+
+
+
+
+/*proyectos*/
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px; /* Espacio entre las imágenes */
+    max-width: 1200px;
+    margin: 20px;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 16px); /* Tres columnas, el -16px es para compensar el gap */
+    max-width: calc(33.333% - 16px);
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Esto asegura que la imagen no se corte */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 16px); /* Dos columnas en pantallas más pequeñas */
+        max-width: calc(50% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%; /* Una columna en pantallas muy pequeñas */
+        max-width: 100%;
     }
 }
